@@ -1,7 +1,8 @@
 baseURL = 'https://anzuchitakuro.github.io/takuroblog/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+languageCode = 'ja'
+title = 'Takuro Blog'
 theme = 'tranquilpeak'
+defaultContentLanguage = 'ja'
 
 [permalinks]
 posts = "/:year/:month/:slug/"
@@ -138,7 +139,7 @@ hierarchicalCategories = true
 #    large sidebar is swiped on all lower screens
 # 5: Display header bar on all screens and large sidebar is swiped on large screen
 # 6: Display header bar on all screens and medium sidebar is swiped
-sidebarBehavior = 1
+sidebarBehavior = 3
 
 # Customize link of author avatar in sidebar
 #  [params.sidebar.profile]
