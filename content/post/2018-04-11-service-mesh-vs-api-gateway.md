@@ -9,7 +9,7 @@ author:     "赵化冰"
 image: "/img/2018-04-11-service-mesh-vs-api-gateway/background.jpg"
 published: true
 tags:
-    - Microservice
+    - Compose
     - Service Mesh
     - API Gateway
 URL: "/2018/04/11/service-mesh-vs-api-gateway/"

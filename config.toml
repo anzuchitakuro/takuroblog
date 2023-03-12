@@ -1,6 +1,6 @@
 baseURL = 'https://anzuchitakuro.github.io/takuroblog/'
 title = 'Takuro Blog'
-theme = "hugo-theme-cleanwhite"
+theme = "cleanwhite"
 languageCode = 'ja'
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
