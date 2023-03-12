@@ -1,4 +1,4 @@
 baseURL = 'https://anzuchitakuro.github.io/takuroblog/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-theme = 'robust'
+theme = 'tranquilpeak'
