@@ -13,7 +13,7 @@ on
 Saturday, March 11, 2023</span></div></div></div></div></header><article><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2
 col-md-10 col-md-offset-1
 post-container"><h1 id=horizontalpagerとlazyrowのスクロールが競合してしまう問題点>HorizontalPagerとLazyRowのスクロールが競合してしまう問題点</h1><p>LazyRowの末端までスクロールした時に親のHorizontalPagerのスクロールに移ってしまいpagerが動いてしまう問題がありました。
-要件的にpagerのスクロールを無効にしたいため解決策を調べました。</p><p><img src=https://storage.googleapis.com/zenn-user-upload/3fc5dfd3f4fc-20220723.gif alt></p><h1 id=実装方法>実装方法</h1><p>依存関係のバージョンは以下です。</p><pre tabindex=0><code>implementation &#39;com.google.accompanist:accompanist-pager:0.23.0&#39;
+要件的にpagerのスクロールを無効にしたいため解決策を調べました。</p><link rel=stylesheet href=/css/hugo-easy-gallery.css><div class=box style=max-width:320px><figure class=center itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://storage.googleapis.com/zenn-user-upload/3fc5dfd3f4fc-20220723.gif></div><a href=https://storage.googleapis.com/zenn-user-upload/3fc5dfd3f4fc-20220723.gif itemprop=contentUrl></a></figure></div><h1 id=実装方法>実装方法</h1><p>依存関係のバージョンは以下です。</p><pre tabindex=0><code>implementation &#39;com.google.accompanist:accompanist-pager:0.23.0&#39;
 </code></pre><p>Accompanistは、Jetpack Composeにはまだ実装されていない機能を補完したライブラリ群です。</p><pre tabindex=0><code class=language-kotlin: data-lang=kotlin:>HorizontalPager(
     state = pagerState,
     count = 3,
@@ -43,7 +43,7 @@ post-container"><h1 id=horizontalpagerとlazyrowのスクロールが競合し�
 }
 </code></pre><h1 id=原因>原因</h1><p>自動ネストスクロールによってスクロールアクションを開始する操作は、子から親に自動的に伝播されます。
 つまり、子であるLazyRowのスクロールがそれ以上できなくなると、親であるHorizontalPagerのスクロールに移ってしまうことが原因でした。</p><p>参考：https://developer.android.com/jetpack/compose/gestures?hl=ja#auto-nested-scrolling</p><h1 id=対応方法>対応方法</h1><p>LazyRowをBoxで囲いmodifierにスクロール可能にするscrollableと
-特定方向のスワイプを無効にするdraggableを使うことによって解決できました。</p><p><img src=https://storage.googleapis.com/zenn-user-upload/bfc3131d6c8b-20220723.gif alt></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span>HorizontalPager(
+特定方向のスワイプを無効にするdraggableを使うことによって解決できました。</p><div class=box style=max-width:320px><figure class=center itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://storage.googleapis.com/zenn-user-upload/bfc3131d6c8b-20220723.gif></div><a href=https://storage.googleapis.com/zenn-user-upload/bfc3131d6c8b-20220723.gif itemprop=contentUrl></a></figure></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span>HorizontalPager(
 </span></span><span style=display:flex><span>    state = pagerState,
 </span></span><span style=display:flex><span>    count = 3,
 </span></span><span style=display:flex><span>) {
