@@ -18,7 +18,7 @@ categories: [ Tech ]
 LazyRowの末端までスクロールした時に親のHorizontalPagerのスクロールに移ってしまいpagerが動いてしまう問題がありました。
 要件的にpagerのスクロールを無効にしたいため解決策を調べました。
 
-![](https://storage.googleapis.com/zenn-user-upload/3fc5dfd3f4fc-20220723.gif)
+{{< figure src="https://storage.googleapis.com/zenn-user-upload/3fc5dfd3f4fc-20220723.gif" class="center" width="320px"  >}}
 
 # 実装方法
 依存関係のバージョンは以下です。
@@ -67,7 +67,8 @@ HorizontalPager(
 LazyRowをBoxで囲いmodifierにスクロール可能にするscrollableと
 特定方向のスワイプを無効にするdraggableを使うことによって解決できました。
 
-![](https://storage.googleapis.com/zenn-user-upload/bfc3131d6c8b-20220723.gif)
+{{< figure src="https://storage.googleapis.com/zenn-user-upload/bfc3131d6c8b-20220723.gif" class="center" width="320px"  >}}
+
 
 ```diff kotlin: PagerScreen.kt
 HorizontalPager(
