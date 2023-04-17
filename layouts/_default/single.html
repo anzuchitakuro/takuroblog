@@ -144,6 +144,7 @@
                     </div>
                 </section>
                 {{ end }}
+                <input type="button" value="テスト" onClick="agreeButtonTapped()"/>
 
                 <!-- Friends Blog -->
                 {{ if .Site.Params.friends }}
@@ -161,5 +162,12 @@
         </div>
     </div>
 </article>
+    <script type="text/javascript">
+        function agreeButtonTapped() {
+            console.log("button click start");
+            Android.agreeButtonTapped();
+            console.log("button click end");
+        }
+    </script>
 
 {{ end }}
