@@ -1,4 +1,4 @@
-baseURL = 'https://anzuchitakuro.github.io/takuroblog/'
+baseURL = 'https://takuroanzuchi.github.io/takuroblog/'
 title = 'Takuro Blog'
 theme = "cleanwhite"
 languageCode = 'ja'
@@ -52,7 +52,7 @@ about_me = true
 
 [params.social]
 rss            = true
-github         = "https://github.com/anzuchitakuro"
+github         = "https://github.com/takuroanzuchi"
 
 [[params.addtional_menus]]
 title =  "ABOUT"
